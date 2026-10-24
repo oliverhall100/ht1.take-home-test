@@ -1,6 +1,6 @@
 import { HttpResponse } from "./httpresponse";
 
-export const lookupPostcode = async (postcode: string): Promise<HttpResponse<{ longitude: number; latitude: number }>> => {
+export async function lookupPostcode(postcode: string): Promise<HttpResponse<{ longitude: number; latitude: number }>> {
 	// Generate a random number between 0 and 1
 	const randomNumber = Math.random();
 
@@ -12,4 +12,4 @@ export const lookupPostcode = async (postcode: string): Promise<HttpResponse<{ l
 		statusCode: success ? 200 : 500,
 		body: success ? { longitude: 50.05, latitude: -5.05 } : undefined,
 	};
-};
+}
